@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     bat
     nerd-fonts.iosevka
+    obsidian
     telegram-desktop
     tree
     fastfetch

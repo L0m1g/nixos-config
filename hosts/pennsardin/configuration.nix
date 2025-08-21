@@ -5,6 +5,7 @@
     ./raid.nix
     ./bepovim.nix
     ../../wm/bspwm.nix
+    ../../apps/qemu.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes" ];
   boot.initrd.kernelModules = [];
