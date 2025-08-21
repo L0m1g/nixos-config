@@ -47,6 +47,7 @@
       enable = true ;
       startupPrograms = [
         "killall polybar"
+        "eval $(ssh-agent -s); ssh-add ~/.ssh/github"
           "setxkbmap bepovim"
           "sxhkd -m 1"
           "xrandr \\
