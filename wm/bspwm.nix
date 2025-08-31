@@ -8,8 +8,14 @@
       };
       windowManager.bspwm.enable = true ;
     };
-    desktopManager.gnome.enable = lib.mkForce false ;
-    displayManager.gdm.enable = lib.mkForce false ;
+    desktopManager = {
+      gnome.enable = lib.mkForce false ;
+      plasma6.enable = lib.mkForce false ;
+    };
+    displayManager = {
+      gdm.enable = lib.mkForce false ;
+      sddm.enable = lib.mkForce false ;
+    };
   };
   home-manager.users.lomig = { pkgs, ... }: {
     home.packages = with pkgs; [
@@ -17,6 +23,7 @@
         alacritty rofi feh font-awesome
         picom xorg.xset xidlehook betterlockscreen
         pywal16 imagemagick
+        pulsemixer
     ];
 
     xsession.enable = true ;
@@ -47,7 +54,7 @@
       enable = true ;
       startupPrograms = [
         "killall polybar"
-        "eval $(ssh-agent -s); ssh-add ~/.ssh/github"
+          "eval $(ssh-agent -s); ssh-add ~/.ssh/github"
           "setxkbmap bepovim"
           "sxhkd -m 1"
           "xrandr \\
@@ -55,6 +62,7 @@
           "while pgrep -x polybar >/dev/null; do sleep 0.2; done"
           "polybar"
           "bash ~/.fehbg"
+          "bspc rule -a floorp desktop=^focused follow=on"
       ];
       extraConfig = ''
         bspc config borderless_monocle true
@@ -99,6 +107,12 @@
         "super + shift + j" = "bspc node -s south";
         "super + shift + k" = "bspc node -s north";
         "super + shift + l" = "bspc node -s east";
+
+# Gestion du tiling
+        "super + f" = "bspc node -t fullscreen" ;
+        "super + s" = "bspc node -t floating" ;
+        "super + shift + t" = "bspc node -t pseudo_tiled" ;
+        "super + t" = "bspc node -t tiled" ;
       };
     };
 
@@ -156,10 +170,6 @@
     };
 
 
-    programs.floorp = {
-      enable = true ;
-      languagePacks = [ "fr" ] ;
-    };
   };
 }
 

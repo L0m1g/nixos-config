@@ -2,12 +2,12 @@
 {
   services = {
     displayManager = {
-      gdm.enable = true ;
-      sddm.enable = lib.mkForce false ;
+      gdm.enable = lib.mkForce false ;
+      sddm.enable = true ;
     };
     desktopManager = {
-      gnome.enable = true ;
-      plasma6.enable = lib.mkForce false ;
+      gnome.enable = lib.mkForce false ;
+      plasma6.enable = true ;
     };
     xserver = {
       windowManager.bspwm.enable = lib.mkForce false ;
