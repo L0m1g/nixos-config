@@ -1,9 +1,8 @@
 {pkgs, ...}: {
   imports = [
-    ../../hm/common/browser.nix
     ../common/nvim.nix
+    ../../hm/common/git.nix
     ../../hm/common/zsh.nix
-    ../desktop/bspwm.nix
   ];
   home.stateVersion = "25.05"; # ou ton actuelle
   home = {
@@ -11,11 +10,6 @@
     homeDirectory = "/home/lomig";
     packages = with pkgs; [
       bat
-      fastfetch
-      nerd-fonts.iosevka
-      obsidian
-      smug
-      telegram-desktop
       tree
     ];
   };

@@ -24,7 +24,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    users.lomig = import ../../hm/users/lomig.nix;
+    users.lomig = import ../../hm/users/lomig-desktop.nix;
   };
 
   system.stateVersion = "25.05"; # pour éviter les hurlements inutiles

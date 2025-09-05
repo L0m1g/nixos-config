@@ -1,6 +1,9 @@
 # hm/desktop/bspwm.nix
 { pkgs, ... }:
 {
+  imports = [
+    ../common/browser.nix
+  ];
   home.packages = with pkgs; [
     bspwm sxhkd xorg.xinit xterm alacritty rofi feh font-awesome
     picom xorg.xset xidlehook betterlockscreen pywal16 imagemagick
@@ -20,7 +23,6 @@
       "setxkbmap bepovim"
       "xrandr --output DisplayPort-1 --rate 60 --pos 0x0"
       "while pgrep -x polybar >/dev/null; do sleep 0.2; done; polybar main"
-      # fond d’écran (feh)
       "bash ~/.fehbg"
     ];
 
@@ -32,7 +34,6 @@
     '';
   };
 
-  # Réglages X (corrigé : c'était 'xsession s noblank' -> 'xset s noblank')
   xsession.initExtra = ''
     xset s 300 300
     xset s on
@@ -41,7 +42,6 @@
     xset dpms 0 0 500
   '';
 
-  # sxhkd
   services.sxhkd = {
     enable = true;
     extraOptions = [ "-m" "1" ];

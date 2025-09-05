@@ -3,7 +3,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {
@@ -20,13 +20,50 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "home-manager-stable": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
       "locked": {
-        "lastModified": 1756892917,
-        "narHash": "sha256-hVsGRW6M3Rd2xSlKowNREyVHXCUbxHoktu1ujgxT4x8=",
+        "lastModified": 1756679287,
+        "narHash": "sha256-Xd1vOeY9ccDf5VtVK12yM0FS6qqvfUop8UQlxEB+gTQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "07fc025fe10487dd80f2ec694f1cd790e752d0e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1756886854,
+        "narHash": "sha256-6tooT142NLcFjt24Gi4B0G1pgWLvfw7y93sYEfSHlLI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3f29c71a26f20c830b3708d02bfa62fb1890354a",
+        "rev": "0e6684e6c5755325f801bda1751a8a4038145d7d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1756936398,
+        "narHash": "sha256-/o1TTpMIICpjrMHBilL9lYm/r69uhdK1L8j1pfY6tWU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47f28ad9378956563df9a884fd1b209b64336ba3",
         "type": "github"
       },
       "original": {
@@ -39,7 +76,9 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "home-manager-stable": "home-manager-stable",
+        "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
