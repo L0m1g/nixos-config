@@ -12,6 +12,7 @@
       ./hardware.nix
       ../../profiles/server-selfhosted.nix
       ../../modules/services/caddy.nix
+      ../../modules/services/forgejo.nix
     ];
 
   # Bootloader.
@@ -32,7 +33,7 @@
 
   users.users.lomig = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "lp" "wheel"];
+    extraGroups = ["networkmanager" "lp" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -48,7 +49,6 @@
      git
      hugo
   ];
-
   networking.firewall.allowedTCPPorts = [ 80 ];
   system.stateVersion = "25.05"; # Did you read the comment?
 }

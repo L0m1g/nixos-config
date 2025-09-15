@@ -110,6 +110,8 @@
 
       " Rendre les messages de swap moins dramatiques
       set shortmess+=A
+
+      inoremap <silent><expr> <Enter> pumvisible() ? coc#pum#confirm() : "\<CR>"
     '';
 
     extraPackages = with pkgs; [
