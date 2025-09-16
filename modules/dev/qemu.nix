@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../virtual/truenas.nix
+#    ../virtual/truenas.nix
   ];
   boot.kernelModules = lib.mkAfter ["tun"];
   environment.systemPackages = with pkgs; [

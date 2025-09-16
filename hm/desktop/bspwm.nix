@@ -1,5 +1,5 @@
 # hm/desktop/bspwm.nix
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ../common/browser.nix
@@ -22,7 +22,7 @@
       "sxhkd -m 1"
       "setxkbmap bepovim"
       "xrandr --output DisplayPort-1 --rate 60 --pos 0x0"
-      "while pgrep -x polybar >/dev/null; do sleep 0.2; done; polybar main"
+      "while pgrep -x polybar >/dev/null; do sleep 1; done; polybar main"
       "bash ~/.fehbg"
     ];
 
@@ -139,10 +139,10 @@
     settings = {
       general.import = [ "~/.cache/wal/colors-alacritty.toml" ];
       font = {
-        normal = { family = "Iosevka Nerd Font"; style = "Regular"; };
-        bold   = { family = "Iosevka Nerd Font"; style = "Bold"; };
-        italic = { family = "Iosevka Nerd Font"; style = "Italic"; };
-        size = 9;
+        normal = { family = lib.mkForce "Iosevka Nerd Font"; style = "Regular"; };
+        bold   = { family = lib.mkForce "Iosevka Nerd Font"; style = "Bold"; };
+        italic = { family = lib.mkForce "Iosevka Nerd Font"; style = "Italic"; };
+        size = lib.mkForce 9;
       };
     };
   };

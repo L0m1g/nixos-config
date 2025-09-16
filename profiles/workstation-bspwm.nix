@@ -3,6 +3,7 @@
     ../modules/roles/workstation.nix
     ../modules/desktop/xorg-bspwm.nix
     ../modules/common/base.nix
+    ../modules/common/fonts.nix
     ../modules/common/networking.nix
     ../modules/common/plymouth.nix
     ../modules/hardware/firmware.nix
@@ -11,7 +12,6 @@
     ../modules/common/bluetooth.nix
     ../modules/common/gaming.nix
     ../modules/services/printing.nix
-    ../modules/dev/qemu.nix
     ../modules/common/lockscreen.nix
     ../modules/common/energy.nix
   ];

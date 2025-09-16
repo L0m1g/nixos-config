@@ -9,8 +9,8 @@
       fastfetch
       nerd-fonts.iosevka
       obsidian
+      proton-pass
       smug
-      telegram-desktop
     ];
   };
 }

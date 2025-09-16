@@ -11,8 +11,8 @@
     ../virtual/vfio.nix
 
     # Dev
-    ../dev/qemu.nix
-    ../virtual/truenas.nix # seulement si tu l’utilises sur ce host
+#    ../dev/qemu.nix
+#    ../virtual/truenas.nix # seulement si tu l’utilises sur ce host
   ];
 
   environment.systemPackages = with pkgs; [
