@@ -21,9 +21,9 @@
     };
     settings = {
       server = {
-        DOMAIN = "git.lomig.me";
-        ROOT_URL = "https://git.lomig.me/";
-        SSH_DOMAIN = "git.lomig.me";
+        DOMAIN = "govel.porzh.me";
+        ROOT_URL = "https://govel.porzh.me/";
+        SSH_DOMAIN = "govel.porzh.me";
         HTTP_PORT = 3000;
         SSH_PORT = 22;
         START_SSH_SERVER = false;
@@ -45,10 +45,10 @@
   services.openssh.enable = true;
   networking.firewall.interfaces."eth0".allowedTCPPorts = [ 22 ]; # pour admin
 
-  # --- Caddy pour git.lomig.me ---
+  # --- Caddy pour govel.porzh.me ---
   services.caddy = {
     enable = true;
-    virtualHosts."git.lomig.me" = {
+    virtualHosts."govel.porzh.me" = {
       extraConfig = ''
         reverse_proxy localhost:3000
       '';

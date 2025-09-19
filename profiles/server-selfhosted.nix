@@ -4,6 +4,7 @@
     ../modules/common/base.nix
     ../modules/common/networking.nix
     ../modules/services/printing.nix
+    ../modules/sites/porzh.me.nix
   ];
 
   services.openssh.enable = true;
