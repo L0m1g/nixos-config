@@ -11,6 +11,7 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../profiles/server-selfhosted.nix
+      ../../modules/services/ftp.nix
       ../../modules/services/forgejo.nix
     ];
 
