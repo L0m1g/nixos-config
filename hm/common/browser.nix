@@ -6,6 +6,8 @@
       settings = {
         "intl.locale.requested" = "fr" ;
         "intl.accept_languages" = "fr, en-US, en";
+        "layers.acceleration.disabled" = true ;
+        "gfx.webrender.all" = false ;
         "privacy.trackingprotection.enabled" = true ;
         "privacy.resistFingerprinting" = true ;
         "network.cookie.cookieBehavior" = 1;

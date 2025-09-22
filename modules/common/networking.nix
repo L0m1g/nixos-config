@@ -4,5 +4,6 @@ _: {
     nameservers = ["1.1.1.1" "8.8.8.8"];
     dhcpcd.extraConfig = "nohook resolv.conf";
     firewall.enable = true;
+    interfaces.enp11s0.wakeOnLan.enable = true ;
   };
 }

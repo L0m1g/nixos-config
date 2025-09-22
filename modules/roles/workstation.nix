@@ -29,5 +29,6 @@
     glances
     parted
     tmux
+    discord
   ];
 }

@@ -7,7 +7,8 @@
   home.packages = with pkgs; [
     bspwm sxhkd xorg.xinit xterm alacritty rofi feh font-awesome
     picom xorg.xset xidlehook betterlockscreen pywal16 imagemagick
-    pulsemixer ranger jq file highlight unzip
+    pulsemixer ranger jq file highlight unzip mpv
+    protonvpn-gui
   ];
 
   # Gère le ssh-agent proprement côté user
@@ -22,7 +23,7 @@
       "sxhkd -m 1"
       "setxkbmap bepovim"
       "xrandr --output DisplayPort-1 --rate 60 --pos 0x0"
-      "while pgrep -x polybar >/dev/null; do sleep 1; done; polybar main"
+#      "while pgrep -x polybar >/dev/null; do sleep 1; done; polybar main"
       "bash ~/.fehbg"
     ];
 
@@ -34,13 +35,13 @@
     '';
   };
 
-  xsession.initExtra = ''
-    xset s 300 300
-    xset s on
-    xset s noblank
-    xset +dpms
-    xset dpms 0 0 500
-  '';
+#  xsession.initExtra = ''
+#    xset s 300 300
+#    xset s on
+#    xset s noblank
+#    xset +dpms
+#    xset dpms 0 0 500
+#  '';
 
   services.sxhkd = {
     enable = true;
@@ -146,5 +147,23 @@
       };
     };
   };
+
+  programs.rtorrent = {
+    enable = true ;
+    extraConfig = ''
+      directory = /srv/raid
+      port_range = 6881-6891
+      max_peers = 150
+      max_peers_seed = 100
+      protocol.pex.set = true ;
+      schedule = watch_directory,5,5,load.start=~/Téléchargements/*.torrent
+      pieces.hash.on_completion.set = no
+      network.max_open_files.set = 8192
+      session = /home/lomig/.cache/rtorrent/session
+'';
+  };
+  home.activation.createRtorrentSessionDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p ~/.cache/rtorrent/session
+  '';
 }
 
