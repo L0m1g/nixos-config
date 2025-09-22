@@ -31,7 +31,7 @@
     enable = true;
 
     # Autoriser les comptes locaux (system users)
-    localUsers = false;
+    localUsers = true;
 
     # Refuser l’accès anonyme (sécurité renforcée)
     anonymousUser = false;
